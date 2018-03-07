@@ -2,6 +2,8 @@
 
 return [
 
+    'support email' => 'help@oscarangel.me',
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
