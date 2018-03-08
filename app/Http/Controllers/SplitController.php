@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Config;
 
-class PageController extends Controller
+class SplitController extends Controller
 {
-    public function welcome()
+    public function index()
     {
-        return view('welcome');
+        return 'Show the split input Form';
     }
 
-    public function about()
+    public function checkInput()
     {
-        return 'This is information about the Bill Splitter page';
+        return 'Check inputs provided by the user and send to calc code';
     }
 
     public function contact()

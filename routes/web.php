@@ -1,10 +1,10 @@
 <?php
 
-Route::get('/', 'PageController@welcome');
+Route::get('/', 'SplitController@index');
 
-Route::get('/about', 'PageController@about');
+Route::get('/check-input', 'SplitController@checkInput');
 
-Route::get('/contact', 'PageController@contact');
+Route::get('/contact', 'SplitController@contact');
 
 Route::get('/index', 'CalcSplitter@index');
 
