@@ -11,7 +11,10 @@ class SplitController extends Controller
     {
         return 'Show the split input Form';
     }
-
+    public function welcome()
+    {
+        return view('welcome');
+    }
     public function checkInput()
     {
         return 'Check inputs provided by the user and send to calc code';
