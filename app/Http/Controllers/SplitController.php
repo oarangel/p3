@@ -13,7 +13,7 @@ class SplitController extends Controller
     }
     public function welcome()
     {
-        return view('welcome');
+        return view('display.show');
     }
     public function checkInput()
     {
