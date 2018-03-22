@@ -1,0 +1,41 @@
+body {
+    padding: 20px;
+    margin: 0 auto;
+    width: 850px;
+}
+
+p {
+    font-size: 14px;
+}
+
+p.ex2 {
+    display: inline;
+}
+
+.amount {
+    border: 4px solid darkblue;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    font-weight: bolder;
+}
+
+label {
+    font-weight: 800;
+}
+
+.results {
+    font-weight: 800;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+H1 {
+    text-align: center;
+}
+

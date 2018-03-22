@@ -7,7 +7,7 @@
           rel='stylesheet' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm'
           crossorigin='anonymous'>
 
-    <link href='styles.css' rel='stylesheet'>
+    <link href='/css/p3.css' rel='stylesheet'>
 </head>
 <body>
 
