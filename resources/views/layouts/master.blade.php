@@ -20,7 +20,7 @@
 
 
 <footer>
-    <a href='http://github.com/oarangel/P2'>View on Github</a>
+    <a href='http://github.com/oarangel/P3'>View on Github</a>
 </footer>
 
 
