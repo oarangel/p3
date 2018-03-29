@@ -23,6 +23,14 @@ class SplitController extends Controller
             'totalPer' => 'required|digits:2',
             'tipPercentage' => 'required',
         ]);
+
+
+        # Return the view, with the total Amount, number of people and tip amount
+        return view('display.show')->with([
+            'totalAmt' => $totalAmt,
+            'totalPer' => $totalPer,
+            'searchResults' => $tipPercentage,
+        ]);
     }
 
     public function contact()
