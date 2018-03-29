@@ -15,9 +15,14 @@ class SplitController extends Controller
     {
         return view('display.show');
     }
-    public function checkInput()
+    public function checkInput(Request $request)
     {
-        return 'Check inputs provided by the user and send to calc code';
+        $this->validate($request, [
+
+            'totalAmt' => 'required|digits:5',
+            'totalPer' => 'required|digits:2',
+            'tipPercentage' => 'required',
+        ]);
     }
 
     public function contact()
@@ -25,3 +30,4 @@ class SplitController extends Controller
         return 'Questions? Email us at ' . Config::get('app.support email');
     }
 }
+
