@@ -16,7 +16,7 @@
     <h1>Bill Splitter</h1>
 
 
-    <form method='GET' action='/show'>
+    <form method='GET' action='/display/show'>
 
         <div class='details'>* Required fields</div>
 
