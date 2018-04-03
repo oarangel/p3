@@ -7,32 +7,67 @@ use Config;
 
 class SplitController extends Controller
 {
-    public function index()
-    {
-        return 'Show the split input Form';
-    }
-    public function welcome()
-    {
-        return view('display.show');
 
-    }
-    public function checkInput(Request $request)
-    {
-        $this->validate($request, [
 
-            'totalAmt' => 'required|digits:5',
-            'totalPer' => 'required|digits:2',
-            'tipPercentage' => 'required',
+    public function index(Request $request)
+    {
+        # Extract the `total` from the session *if* it exists
+        # If it doesn't, default $total to null
+        $total = $request->session()->get('total') ?? null;
+
+        # Return the view and include the $total data
+        return view('display.index')->with([
+            'total' => $total,
         ]);
+    }
 
+    function split(Request $request)
+{
+    # Validate the data
+    $this->validate($request, [
+        'totalAmt' => 'required|digits:4',
+        'totalPer' => 'required|digits:2',
+        'tipPercentage' => 'required',
+    ]);
+
+    # Get the values we'll need to do the calc from the request
+    #$totalAmt = 'totalAmt';
+
+    dump($request);
+    $totalAmt = $request->input('totalAmt', null);
+    $totalPer = $request->input('totalPer', null);
+    $tipPercentage = $request->input('tipPercentage', null);
+
+    if ($tipPercentage == 'excellentTip') {
+        $tipAmt = 1.20;
+    } else if ($tipPercentage == 'goodTip') {
+        $tipAmt = 1.18;
+    } else if ($tipPercentage == 'averageTip') {
+        $tipAmt = 1.15;
+    } else {
+        $tipAmt = 1.0;
+    }
+
+    dump($tipPercentage);
+    dump($tipAmt);
+
+
+
+
+
+        # Do the actual calculation...
+     #$total = ($totalAmt / $totalPer) * $tipPercentage;
+        #$this->total = $totalAmt / $totalPer;
+       $total= ($totalAmt / $totalPer) * $tipAmt;
+
+        # Send the user back to the page to see the form, where we'll show the total
+
+
+      return redirect('/')->with(['total' => $total]);
+
+    }
 
         # Return the view, with the total Amount, number of people and tip amount
-        return view('display.show')->with([
-            'totalAmt' => $totalAmt,
-            'totalPer' => $totalPer,
-            'searchResults' => $tipPercentage,
-        ]);
-    }
 
     public function contact()
     {

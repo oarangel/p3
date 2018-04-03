@@ -3,11 +3,11 @@
 
 @push('head')
     {{-- Page specific CSS includes should be defined here; this .css file does not exist yet, but we can create it --}}
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
+    {{--}}<link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
           rel='stylesheet' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm'
           crossorigin='anonymous' xmlns="http://www.w3.org/1999/html">
 
-    <link href='/css/p3.css' rel='stylesheet'>
+    <link href='/css/p3.css' rel='stylesheet'>--}}
 @endpush
 
 
@@ -16,7 +16,7 @@
     <h1>Bill Splitter</h1>
 
 
-    <form method='GET' action='/display/show'>
+    <form method='GET' action='/split'>
 
         <div class='details'>* Required fields</div>
 
@@ -52,4 +52,7 @@
         @include('errors.error-form')
     </form>
 
+    @if(isset($total))
+        Total each person owes: ${{ $total }}
+    @endif
 @endsection

@@ -1,6 +1,5 @@
 <?php
 
-Route::get('/', 'SplitController@index');
 
 #Route::get('/check-input', 'SplitController@checkInput');
 
@@ -12,4 +11,6 @@ Route::get('/tipAmt/{tip}', 'CalcSplitter@show');
 
 Route::any('/practice/{n?}', 'PracticeController@index');
 
-Route::any('/test', 'SplitController@welcome');
+Route::get('/', 'SplitController@index'); # Display the form
+Route::get('/split', 'SplitController@split'); # Process the bill splitter form
+

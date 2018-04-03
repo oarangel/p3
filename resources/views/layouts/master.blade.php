@@ -3,11 +3,13 @@
 <head>
     <title>Bill Splitter</title>
     <meta charset='utf-8'>
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
+    {{--}}<link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
           rel='stylesheet' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm'
-          crossorigin='anonymous'>
+          crossorigin='anonymous'>--}}
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='/css/p3.css' type='text/css' rel='stylesheet'>
 
-    <link href='/css/p3.css' rel='stylesheet'>
     @stack('head')
 </head>
 
