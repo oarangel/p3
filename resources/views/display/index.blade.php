@@ -23,11 +23,11 @@
         <div>
             <label for='totalAmt'>* Enter Bill Amount</label>
             <input type='text' name='totalAmt' id='totalAmt' value='{{ old('totalAmt') }}'>
-            @include('errors.error-field', ['field' => 'totalPer'])
+            @include('errors.error-field', ['field' => 'totalAmt'])
         </div>
 
         <div>
-            <label>Enter Number of Persons:</label>
+            <label for='totalPer'>Enter Number of Persons:</label>
             <input type='text' name='totalPer' id='totalPer' value='{{ old('totalPer') }}'>
             @include('errors.error-field', ['field' => 'totalPer'])
 
