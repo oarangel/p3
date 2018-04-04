@@ -22,17 +22,15 @@ class SplitController extends Controller
 
     function split(Request $request)
     {
-        # Validate the data
+        # Following Code Validates the data
         $this->validate($request, [
             'totalAmt' => 'required |numeric|min:10',
             'totalPer' => 'required |integer|min:2|max:20',
             'tipPercentage' => 'required',
         ]);
 
-        # Get the values we'll need to do the calc from the request
-        #$totalAmt = 'totalAmt';
+        # Get the values to do the calc from the request
 
-        #dump($request);
         $totalAmt = $request->input('totalAmt');
         $totalPer = $request->input('totalPer');
         $tipPercentage = $request->input('tipPercentage', null);
@@ -51,7 +49,7 @@ class SplitController extends Controller
 
         $total = ($totalAmt / $totalPer) * $tipAmt;
 
-        # Send the user back to the page to see the form, where we'll show the total
+        # Redirect user to the page to see the form and show the total
 
         return redirect('/')->with(['total' => round($total)]);
     }

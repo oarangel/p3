@@ -18,17 +18,17 @@
 
     <form method='GET' action='/split'>
 
-        <div> <h5>* Required fields </h5> </div>
+        <div><h5>* Required fields </h5></div>
 
         <div>
-            <label for='totalAmt'> * Enter Bill Amount  </label>
+            <label for='totalAmt'> * Enter Bill Amount </label>
             <input type='text' name='totalAmt' id='totalAmt' value='{{ old('totalAmt') }}'>
             <p class='ex2'> Minimun amount is $10.</p>
             @include('modules.error-field', ['field' => 'totalAmt'])
         </div>
 
         <div>
-            <label for='totalPer'> * Enter Number of Persons:  </label>
+            <label for='totalPer'> * Enter Number of Persons: </label>
             <input type='text' name='totalPer' id='totalPer' value='{{ old('totalPer') }}'>
             @include('modules.error-field', ['field' => 'totalPer'])
 
@@ -37,17 +37,17 @@
             <p class='ex2'> Enter integer numbers.</p>
         </div>
         <div>
-            <label>  Select Tip Percentage </label>
+            <label> Select Tip Percentage </label>
 
 
-        <select name='tipPercentage' id='tipPercentage'>
-            <option value='choose'> Choose one... </option>
-            <option value='excellentTip'> 20% Excellent Service</option>
-            <option value='goodTip'> 18% Good Service</option>
-            <option value='avgTip'>15% Average Service</option>
+            <select name='tipPercentage' id='tipPercentage'>
+                <option value='choose'> Choose one...</option>
+                <option value='excellentTip'> 20% Excellent Service</option>
+                <option value='goodTip'> 18% Good Service</option>
+                <option value='avgTip'>15% Average Service</option>
 
-        </select>
-        <p class='ex2'>If not selected, no Tip will be added. </p>
+            </select>
+            <p class='ex2'>If not selected, no Tip will be added. </p>
         </div>
 
         <input type='submit' value='Calculate' class='btn btn-primary w-200'>
@@ -56,6 +56,11 @@
     </form>
 
     @if(isset($total))
-        Total each person owes: ${{ $total }}
+
+        <h6>Final Amount is rounded up</h6>
+        <div class='amount'>
+            <h5>Amount each per Person owes: ${{ $total }}</h5>
+        </div>
+
     @endif
 @endsection
