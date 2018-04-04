@@ -23,7 +23,7 @@
         <div>
             <label for='totalAmt'> * Enter Bill Amount </label>
             <input type='text' name='totalAmt' id='totalAmt' value='{{ old('totalAmt') }}'>
-            <p class='ex2'> Minimun amount is $10.</p>
+            <p class='ex2'> Minimum amount is $10.</p>
             @include('modules.error-field', ['field' => 'totalAmt'])
         </div>
 
@@ -33,7 +33,7 @@
             @include('modules.error-field', ['field' => 'totalPer'])
 
 
-            <p class='ex2'> Minimun number is 2 and Maximun is 20.</p>
+            <p class='ex2'> Minimum number is 2 and Maximum is 30.</p>
             <p class='ex2'> Enter integer numbers.</p>
         </div>
         <div>

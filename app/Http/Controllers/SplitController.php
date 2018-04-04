@@ -25,7 +25,7 @@ class SplitController extends Controller
         # Following Code Validates the data
         $this->validate($request, [
             'totalAmt' => 'required |numeric|min:10',
-            'totalPer' => 'required |integer|min:2|max:20',
+            'totalPer' => 'required |integer|min:2|max:30',
             'tipPercentage' => 'required',
         ]);
 
