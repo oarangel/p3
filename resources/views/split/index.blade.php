@@ -59,7 +59,7 @@
 
         <h6>Final Amount is rounded up</h6>
         <div class='amount'>
-            <h5>Amount each per Person owes: ${{ $total }}</h5>
+            <h5>Amount each Person owes: ${{ $total }}</h5>
         </div>
 
     @endif
