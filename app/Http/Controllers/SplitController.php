@@ -15,7 +15,7 @@ class SplitController extends Controller
         $total = $request->session()->get('total') ?? null;
 
         # Return the view and include the $total data
-        return view('display.index')->with([
+        return view('split.index')->with([
             'total' => $total,
         ]);
     }
