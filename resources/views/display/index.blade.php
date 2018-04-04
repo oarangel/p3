@@ -18,7 +18,7 @@
 
     <form method='GET' action='/split'>
 
-        <div> * Required fields </div>
+        <div> <h5>* Required fields </h5> </div>
 
         <div>
             <label for='totalAmt'> * Enter Bill Amount  </label>
