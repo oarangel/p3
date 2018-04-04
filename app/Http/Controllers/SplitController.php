@@ -8,7 +8,6 @@ use Config;
 class SplitController extends Controller
 {
 
-
     public function index(Request $request)
     {
         # Extract the `total` from the session *if* it exists
@@ -22,52 +21,42 @@ class SplitController extends Controller
     }
 
     function split(Request $request)
-{
-    # Validate the data
-    $this->validate($request, [
-        'totalAmt' => 'required|digits:4',
-        'totalPer' => 'required|digits:2',
-        'tipPercentage' => 'required',
-    ]);
+    {
+        # Validate the data
+        $this->validate($request, [
+            'totalAmt' => 'required |numeric|min:10',
+            'totalPer' => 'required |integer|min:2|max:20',
+            'tipPercentage' => 'required',
+        ]);
 
-    # Get the values we'll need to do the calc from the request
-    #$totalAmt = 'totalAmt';
+        # Get the values we'll need to do the calc from the request
+        #$totalAmt = 'totalAmt';
 
-    dump($request);
-    $totalAmt = $request->input('totalAmt', null);
-    $totalPer = $request->input('totalPer', null);
-    $tipPercentage = $request->input('tipPercentage', null);
+        #dump($request);
+        $totalAmt = $request->input('totalAmt');
+        $totalPer = $request->input('totalPer');
+        $tipPercentage = $request->input('tipPercentage', null);
 
-    if ($tipPercentage == 'excellentTip') {
-        $tipAmt = 1.20;
-    } else if ($tipPercentage == 'goodTip') {
-        $tipAmt = 1.18;
-    } else if ($tipPercentage == 'averageTip') {
-        $tipAmt = 1.15;
-    } else {
-        $tipAmt = 1.0;
-    }
+        if ($tipPercentage == 'excellentTip') {
+            $tipAmt = 1.20;
+        } else if ($tipPercentage == 'goodTip') {
+            $tipAmt = 1.18;
+        } else if ($tipPercentage == 'averageTip') {
+            $tipAmt = 1.15;
+        } else {
+            $tipAmt = 1.0;
+        }
 
-    dump($tipPercentage);
-    dump($tipAmt);
+        # Split calculation.
 
-
-
-
-
-        # Do the actual calculation...
-     #$total = ($totalAmt / $totalPer) * $tipPercentage;
-        #$this->total = $totalAmt / $totalPer;
-       $total= ($totalAmt / $totalPer) * $tipAmt;
+        $total = ($totalAmt / $totalPer) * $tipAmt;
 
         # Send the user back to the page to see the form, where we'll show the total
 
-
-      return redirect('/')->with(['total' => $total]);
-
+        return redirect('/')->with(['total' => round($total)]);
     }
 
-        # Return the view, with the total Amount, number of people and tip amount
+    # Return the view, with the total Amount, number of people and tip amount
 
     public function contact()
     {

@@ -18,29 +18,30 @@
 
     <form method='GET' action='/split'>
 
-        <div class='details'>* Required fields</div>
+        <div> * Required fields </div>
 
         <div>
-            <label for='totalAmt'>* Enter Bill Amount</label>
+            <label for='totalAmt'> * Enter Bill Amount  </label>
             <input type='text' name='totalAmt' id='totalAmt' value='{{ old('totalAmt') }}'>
+            <p class='ex2'> Minimun amount is $10.</p>
             @include('modules.error-field', ['field' => 'totalAmt'])
         </div>
 
         <div>
-            <label for='totalPer'>Enter Number of Persons:</label>
-            <input type='text' name='totalPer' id='totalPer' placeholder='2' value='{{ old('totalPer') }}'>
+            <label for='totalPer'> * Enter Number of Persons:  </label>
+            <input type='text' name='totalPer' id='totalPer' value='{{ old('totalPer') }}'>
             @include('modules.error-field', ['field' => 'totalPer'])
 
 
-            <p class='ex2'> Minimun number of persons is 2 and Maximun is 20.</p>
+            <p class='ex2'> Minimun number is 2 and Maximun is 20.</p>
             <p class='ex2'> Enter integer numbers.</p>
         </div>
         <div>
-        <label> Select Tip Percentage </label>
+            <label>  Select Tip Percentage </label>
 
 
         <select name='tipPercentage' id='tipPercentage'>
-            <option value='choose'>Choose one...</option>
+            <option value='choose'> Choose one... </option>
             <option value='excellentTip'> 20% Excellent Service</option>
             <option value='goodTip'> 18% Good Service</option>
             <option value='avgTip'>15% Average Service</option>
@@ -49,7 +50,7 @@
         <p class='ex2'>If not selected, no Tip will be added. </p>
         </div>
 
-        <input type='submit' value='Calculate' class='btn btn-primary'>
+        <input type='submit' value='Calculate' class='btn btn-primary w-200'>
 
         @include('modules.error-form')
     </form>

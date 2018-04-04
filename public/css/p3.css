@@ -35,7 +35,10 @@ form {
     margin-bottom: 20px;
 }
 
-H1 {
+/*h1 {
+    text-align: center;
+}*/
+h5 {
     text-align: center;
 }
 .error {
@@ -47,4 +50,9 @@ H1 {
     font-size: 1.2rem;
     font-size: 12px;
     font-style: italic;
+}
+.details {
+    font-size: 1.1rem;
+    font-style: italic;
+    text-align: center;
 }
