@@ -1,4 +1,5 @@
 <?php
+/** Left in por Learning Purposes */
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Config;
