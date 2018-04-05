@@ -14,3 +14,4 @@
 ## Notes for instructor
 
 + Form inputs limited to integers, fixed tip amount and floating dollar amounts.
++ Several lines of code were left in place for learning purposes, comments have been added to identify those lines. 
